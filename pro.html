@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+</head>
+<body>
+                                              <!--nav-->
+    <div class="full-page">
+        <div class="navigation-bar">
+     <div class="logo">
+        <a href='pro.html'>Diamond Casino</a>
+     </div>
+    <nav>
+<ul id='MenuItems'>
+    <li><a href='about_us.html'>About Us</a></li>
+    <li><a href='contact.html'>Contact Us</a></li>
+    <li><a href='games.html'>Games</a></li>
+    <li><button class='loginbtn'
+    onclick="document.getElementById('login-form').style.display='block'"
+    style="width:auto;">Login/Register</button></li>
+</ul>
+</nav>
+</div>
+<!--Login/Register-->
+<div id='login-form' class="login-page">
+    <div class="form-box">
+        <div class="form">
+            <form class="login-form">
+                <center><h1 class='main-heading'>Login</h1></center>
+                <input type="text"placeholder="Username"/>
+                <input type="password"placeholder="Password"/>
+                <button id="lgn">Login</button>
+                <p class="asking">Not Registered?<a href="#"> Register</a></p>
+    </form>
+    <form class="register-form">
+        <center><h1 class="main-heading">Register Form</h1></center>
+        <input id="name" name="name" minlength="3" placeholder="Username"/>
+        <input id="email" type="email" name="email" placeholder="Email-id"/> 
+        <input id="phone" type="text" placeholder="Phone number"/>
+        <input type="password" placeholder="Password"/>
+        <button>Register</button>
+        <p class="asking">Already Registered?<a href='#'>Login</a></p>    
+    </form>
+        </div>
+       </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script>  
+$(document).ready(function() {
+$("#basic-form").validate({
+rules: {
+name : {
+required: true,
+minlength: 3
+},
+age: {
+required: true,
+number: true,
+min: 18
+},
+email: {
+required: true,
+email: true
+},
+phone: {
+required: {
+depends: function(elem) {
+return $("#phone").val() > 50
+}
+},
+number: true,
+min: 0
+}
+}
+});
+});
+
+
+
+var modal = document.getElementById("login-form");
+    window.onclick = function(event)
+    {
+        if (event.target == modal)
+    {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<script>
+    $('.asking a').click(function()
+    {$('form').animate({height: "toggle",opacity:"toggle"},"slow");});    
+</script>
+<!--Alert box-->
+<script>  
+    var button = document.getElementById("lgn")
+   button.onclick = function() {
+    alert("You are logged in");
+}
+</script>
+
+
+
+</body>
+</html>
