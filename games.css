@@ -14,7 +14,8 @@ margin-left: 500px;
     background: url(hm\ img.jpg);
     background-size: cover;
     background-position: center;
-    background-color: gray    
+    background-color: maroon
+
 }
 .navigation-bar{
     display: flex;
@@ -23,7 +24,13 @@ margin-left: 500px;
     padding-left: 80px;
     padding-right: 30px;
     padding-top: 50px;
+    overflow: hidden;
+  position: relative;
 }
+.navigation-bar #myLinks{
+    display: none;
+}
+
 .logo{
     position: fixed;
     margin-top: 10px;

@@ -18,6 +18,8 @@
     padding-left: 80px;
     padding-right: 30px;
     padding-top: 50px;
+    overflow: hidden;
+    position: relative;
 }
 .logo{
     position: fixed;
@@ -118,4 +120,8 @@ nav ul li button:hover
 .form .register-form{
     display: none;
 }
-
+@media  screen and (min-width: 700px) {
+    h1 span :before{
+content: "phone device";
+    }        
+}
